@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/go-playground/form/v4 v4.2.0
 	github.com/google/go-cmp v0.5.9
-	github.com/pelletier/go-toml/v2 v2.0.8
+	github.com/pelletier/go-toml/v2 v2.0.9
 	github.com/spf13/cast v1.5.1
 	github.com/stretchr/testify v1.8.4
 	github.com/ugorji/go/codec v1.2.11
