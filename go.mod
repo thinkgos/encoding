@@ -1,11 +1,12 @@
 module github.com/things-go/encoding
 
 go 1.21
+toolchain go1.22.5
 
 require (
 	github.com/go-playground/form/v4 v4.2.1
 	github.com/google/go-cmp v0.6.0
-	github.com/pelletier/go-toml/v2 v2.2.2
+	github.com/pelletier/go-toml/v2 v2.2.3
 	github.com/spf13/cast v1.7.0
 	github.com/stretchr/testify v1.9.0
 	github.com/ugorji/go/codec v1.2.12
