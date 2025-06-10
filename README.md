@@ -6,7 +6,7 @@ http encoding toolkit
 [![codecov](https://codecov.io/gh/thinkgos/encoding/branch/main/graph/badge.svg)](https://codecov.io/gh/thinkgos/encoding)
 [![Tests](https://github.com/thinkgos/encoding/actions/workflows/ci.yml/badge.svg)](https://github.com/thinkgos/encoding/actions/workflows/ci.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/thinkgos/encoding)](https://goreportcard.com/report/github.com/thinkgos/encoding)
-[![Licence](https://img.shields.io/github/license/thinkgos/encoding)](https://raw.githubusercontent.com/thinkgos/encoding/main/LICENSE)
+[![License](https://img.shields.io/github/license/thinkgos/encoding)](https://raw.githubusercontent.com/thinkgos/encoding/main/LICENSE)
 [![Tag](https://img.shields.io/github/v/tag/thinkgos/encoding)](https://github.com/thinkgos/encoding/tags)
 
 ## Usage
