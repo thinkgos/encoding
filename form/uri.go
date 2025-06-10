@@ -14,9 +14,9 @@ import (
 
 var reg = regexp.MustCompile(`{[\\.\w]+}`)
 
-// EncodeURL encode msg to url path.
+// EncodeUrl encode msg to url path.
 // pathTemplate is a template of url path like http://helloworld.dev/{name}/sub/{sub.name},
-func (c *Codec) EncodeURL(pathTemplate string, v any, needQuery bool) string {
+func (c *Codec) EncodeUrl(pathTemplate string, v any, needQuery bool) string {
 	var repl func(in string) string
 
 	if v == nil || (reflect.ValueOf(v).Kind() == reflect.Ptr && reflect.ValueOf(v).IsNil()) {

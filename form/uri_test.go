@@ -3,7 +3,7 @@ package form
 import (
 	"testing"
 
-	"github.com/things-go/encoding/testdata/examplepb"
+	"github.com/thinkgos/encoding/testdata/examplepb"
 	"google.golang.org/protobuf/types/known/fieldmaskpb"
 )
 
@@ -17,7 +17,7 @@ type NoProtoHello struct {
 	Id   []int64     `json:"id"`
 }
 
-func TestEncodeURL(t *testing.T) {
+func TestEncodeUrl(t *testing.T) {
 	type args struct {
 		pathTemplate string
 		msg          any
@@ -184,7 +184,7 @@ func TestEncodeURL(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := codec.EncodeURL(tt.args.pathTemplate, tt.args.msg, tt.args.needQuery); got != tt.want {
+			if got := codec.EncodeUrl(tt.args.pathTemplate, tt.args.msg, tt.args.needQuery); got != tt.want {
 				t.Errorf("Encode() = %v, want %v", got, tt.want)
 			}
 		})

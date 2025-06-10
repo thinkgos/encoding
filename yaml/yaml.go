@@ -5,7 +5,7 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/things-go/encoding/codec"
+	"github.com/thinkgos/encoding/codec"
 )
 
 // Codec is a Codec implementation with yaml.

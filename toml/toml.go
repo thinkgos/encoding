@@ -5,7 +5,7 @@ import (
 
 	"github.com/pelletier/go-toml/v2"
 
-	"github.com/things-go/encoding/codec"
+	"github.com/thinkgos/encoding/codec"
 )
 
 // Codec is a Codec implementation with yaml.

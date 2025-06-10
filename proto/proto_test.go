@@ -7,7 +7,7 @@ import (
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
-	"github.com/things-go/encoding/testdata/examplepb"
+	"github.com/thinkgos/encoding/testdata/examplepb"
 )
 
 type testInvalidProtoMessage struct {

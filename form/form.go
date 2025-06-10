@@ -8,7 +8,7 @@ import (
 	"github.com/go-playground/form/v4"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/things-go/encoding/codec"
+	"github.com/thinkgos/encoding/codec"
 )
 
 type Codec struct {

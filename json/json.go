@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/things-go/encoding/codec"
+	"github.com/thinkgos/encoding/codec"
 )
 
 // Codec is a Marshaler which marshals/unmarshals into/from JSON

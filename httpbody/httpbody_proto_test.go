@@ -7,7 +7,7 @@ import (
 	"google.golang.org/genproto/googleapis/api/httpbody"
 	"google.golang.org/protobuf/encoding/protojson"
 
-	"github.com/things-go/encoding/jsonpb"
+	"github.com/thinkgos/encoding/jsonpb"
 )
 
 func TestCodec_ContentType(t *testing.T) {

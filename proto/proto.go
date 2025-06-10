@@ -6,7 +6,7 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"github.com/things-go/encoding/codec"
+	"github.com/thinkgos/encoding/codec"
 )
 
 // Codec is a Marshaller which marshals/unmarshals into/from serialize proto bytes

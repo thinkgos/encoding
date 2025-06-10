@@ -6,7 +6,7 @@ import (
 
 	msgpack "github.com/ugorji/go/codec"
 
-	"github.com/things-go/encoding/codec"
+	"github.com/thinkgos/encoding/codec"
 )
 
 // Codec is a Codec implementation with xml.

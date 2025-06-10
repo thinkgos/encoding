@@ -17,15 +17,15 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 	"google.golang.org/protobuf/types/known/wrapperspb"
 
-	"github.com/things-go/encoding/codec"
-	"github.com/things-go/encoding/form"
-	"github.com/things-go/encoding/json"
-	"github.com/things-go/encoding/msgpack"
-	pro "github.com/things-go/encoding/proto"
-	"github.com/things-go/encoding/testdata/examplepb"
-	"github.com/things-go/encoding/toml"
-	"github.com/things-go/encoding/xml"
-	"github.com/things-go/encoding/yaml"
+	"github.com/thinkgos/encoding/codec"
+	"github.com/thinkgos/encoding/form"
+	"github.com/thinkgos/encoding/json"
+	"github.com/thinkgos/encoding/msgpack"
+	pro "github.com/thinkgos/encoding/proto"
+	"github.com/thinkgos/encoding/testdata/examplepb"
+	"github.com/thinkgos/encoding/toml"
+	"github.com/thinkgos/encoding/xml"
+	"github.com/thinkgos/encoding/yaml"
 )
 
 var marshalers = []dummyMarshaler{0, 1}
@@ -40,33 +40,33 @@ func Test_Encoding_Register(t *testing.T) {
 	t.Run("<nil> marshaller not allow", func(t *testing.T) {
 		registry := New()
 
-		err := registry.Register(MIMEURI, nil)
+		err := registry.Register(Mime_Uri, nil)
 		require.Error(t, err)
 	})
 	t.Run("remove MIME type", func(t *testing.T) {
 		registry := New()
-		err := registry.Register(MIMEPROTOBUF, &pro.Codec{})
+		err := registry.Register(Mime_PROTOBUF, &pro.Codec{})
 		require.NoError(t, err)
 
-		got := registry.Get(MIMEPROTOBUF)
+		got := registry.Get(Mime_PROTOBUF)
 		_, ok := got.(*pro.Codec)
 		require.True(t, ok, "should be got MIME proto marshaler")
 
-		err = registry.Delete(MIMEPROTOBUF)
+		err = registry.Delete(Mime_PROTOBUF)
 		require.NoError(t, err)
 
-		got = registry.Get(MIMEPROTOBUF)
+		got = registry.Get(Mime_PROTOBUF)
 		_, ok = got.(*json.Codec)
 		require.True(t, ok, "should be got MIME wildcard marshaler")
 	})
 	t.Run("remove not allow MIME type", func(t *testing.T) {
 		registry := New()
 
-		err := registry.Delete(MIMEURI)
+		err := registry.Delete(Mime_Uri)
 		require.Error(t, err)
-		err = registry.Delete(MIMEQuery)
+		err = registry.Delete(Mime_Query)
 		require.Error(t, err)
-		err = registry.Delete(MIMEURI)
+		err = registry.Delete(Mime_Uri)
 		require.Error(t, err)
 	})
 }
@@ -217,13 +217,13 @@ var protoMessage = &examplepb.ABitOfEverything{
 
 func Test_Encoding_Bind(t *testing.T) {
 	registry := New()
-	_ = registry.Register(MIMEPROTOBUF, &pro.Codec{})
-	_ = registry.Register(MIMEXML, &xml.Codec{})
-	_ = registry.Register(MIMEXML2, &xml.Codec{})
-	_ = registry.Register(MIMEMSGPACK, &msgpack.Codec{})
-	_ = registry.Register(MIMEMSGPACK2, &msgpack.Codec{})
-	_ = registry.Register(MIMEYAML, &yaml.Codec{})
-	_ = registry.Register(MIMETOML, &toml.Codec{})
+	_ = registry.Register(Mime_PROTOBUF, &pro.Codec{})
+	_ = registry.Register(Mime_XML, &xml.Codec{})
+	_ = registry.Register(Mime_XML2, &xml.Codec{})
+	_ = registry.Register(Mime_MSGPACK, &msgpack.Codec{})
+	_ = registry.Register(Mime_MSGPACK2, &msgpack.Codec{})
+	_ = registry.Register(Mime_YAML, &yaml.Codec{})
+	_ = registry.Register(Mime_TOML, &toml.Codec{})
 	tests := []struct {
 		name    string
 		genReq  func() (*http.Request, error)
@@ -233,7 +233,7 @@ func Test_Encoding_Bind(t *testing.T) {
 		{
 			"default: marshaler",
 			func() (*http.Request, error) {
-				marshaler := registry.Get(MIMEWildcard)
+				marshaler := registry.Get(Mime_Wildcard)
 
 				b, err := marshaler.Marshal(&examplepb.Complex{
 					Id:     11,
@@ -446,7 +446,7 @@ func Test_Encoding_Bind(t *testing.T) {
 
 func Test_Encoding_BindQuery(t *testing.T) {
 	registry := New()
-	require.NoError(t, registry.Register(MIMEQuery, form.New("json")))
+	require.NoError(t, registry.Register(Mime_Query, form.New("json")))
 
 	tests := []struct {
 		name    string
@@ -509,7 +509,7 @@ func Test_Encoding_BindQuery(t *testing.T) {
 
 func Test_Encoding_BindUri(t *testing.T) {
 	registry := New()
-	require.NoError(t, registry.Register(MIMEURI, form.New("json")))
+	require.NoError(t, registry.Register(Mime_Uri, form.New("json")))
 
 	tests := []struct {
 		name    string

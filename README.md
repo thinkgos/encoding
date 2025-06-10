@@ -2,12 +2,12 @@
 
 http encoding toolkit  
 
-[![Go.Dev reference](https://img.shields.io/badge/go.dev-reference-blue?logo=go&logoColor=white)](https://pkg.go.dev/github.com/things-go/encoding?tab=doc)
-[![codecov](https://codecov.io/gh/things-go/encoding/branch/main/graph/badge.svg)](https://codecov.io/gh/things-go/encoding)
-[![Tests](https://github.com/things-go/encoding/actions/workflows/ci.yml/badge.svg)](https://github.com/things-go/encoding/actions/workflows/ci.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/things-go/encoding)](https://goreportcard.com/report/github.com/things-go/encoding)
-[![Licence](https://img.shields.io/github/license/things-go/encoding)](https://raw.githubusercontent.com/things-go/encoding/main/LICENSE)
-[![Tag](https://img.shields.io/github/v/tag/things-go/encoding)](https://github.com/things-go/encoding/tags)
+[![Go.Dev reference](https://img.shields.io/badge/go.dev-reference-blue?logo=go&logoColor=white)](https://pkg.go.dev/github.com/thinkgos/encoding?tab=doc)
+[![codecov](https://codecov.io/gh/thinkgos/encoding/branch/main/graph/badge.svg)](https://codecov.io/gh/thinkgos/encoding)
+[![Tests](https://github.com/thinkgos/encoding/actions/workflows/ci.yml/badge.svg)](https://github.com/thinkgos/encoding/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/thinkgos/encoding)](https://goreportcard.com/report/github.com/thinkgos/encoding)
+[![Licence](https://img.shields.io/github/license/thinkgos/encoding)](https://raw.githubusercontent.com/thinkgos/encoding/main/LICENSE)
+[![Tag](https://img.shields.io/github/v/tag/thinkgos/encoding)](https://github.com/thinkgos/encoding/tags)
 
 ## Usage
 
@@ -18,13 +18,13 @@ http encoding toolkit
 Use go get.
 
 ```bash
-    go get github.com/things-go/encoding
+    go get github.com/thinkgos/encoding
 ```
 
 Then import the package into your own code.
 
 ```bash
-    import "github.com/things-go/encoding"
+    import "github.com/thinkgos/encoding"
 ```
 
 ### Example

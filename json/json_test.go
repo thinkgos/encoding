@@ -14,7 +14,7 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 	"google.golang.org/protobuf/types/known/wrapperspb"
 
-	"github.com/things-go/encoding/testdata/examplepb"
+	"github.com/thinkgos/encoding/testdata/examplepb"
 )
 
 func TestCodec_ContentType(t *testing.T) {

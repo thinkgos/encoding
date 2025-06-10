@@ -1,4 +1,4 @@
-module github.com/things-go/encoding
+module github.com/thinkgos/encoding
 
 go 1.22
 

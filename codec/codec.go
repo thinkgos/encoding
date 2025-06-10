@@ -30,9 +30,9 @@ type FormCodec interface {
 
 // UriEncoder encode to url path
 type UriEncoder interface {
-	// EncodeURL encode v to url path.
+	// EncodeUrl encode v to url path.
 	// pathTemplate is a template of url path like http://helloworld.dev/{name}/sub/{sub.name},
-	EncodeURL(pathTemplate string, v any, needQuery bool) string
+	EncodeUrl(pathTemplate string, v any, needQuery bool) string
 }
 
 // FormMarshaler defines a conversion between byte sequence and gRPC payloads / fields.

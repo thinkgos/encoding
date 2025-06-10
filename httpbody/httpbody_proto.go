@@ -3,7 +3,7 @@ package httpbody
 import (
 	"google.golang.org/genproto/googleapis/api/httpbody"
 
-	"github.com/things-go/encoding/codec"
+	"github.com/thinkgos/encoding/codec"
 )
 
 // HTTPBodyCodec is a Marshaler which supports marshaling of a
