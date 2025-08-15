@@ -2,6 +2,7 @@ package encoding
 
 import (
 	"bytes"
+	"context"
 	"errors"
 	"fmt"
 	"io"
@@ -260,7 +261,7 @@ func Test_Encoding_Bind(t *testing.T) {
 		{
 			"form - application/x-www-form-urlencoded",
 			func() (*http.Request, error) {
-				r, err := http.NewRequest(http.MethodPost, "http://example.com", bytes.NewReader([]byte(`id=foo&name=bar`)))
+				r, err := http.NewRequestWithContext(context.Background(), http.MethodPost, "http://example.com", bytes.NewReader([]byte(`id=foo&name=bar`)))
 				if err != nil {
 					return nil, err
 				}
@@ -276,7 +277,7 @@ func Test_Encoding_Bind(t *testing.T) {
 		{
 			"form - method get so it query",
 			func() (*http.Request, error) {
-				r, err := http.NewRequest(http.MethodGet, "http://example.com?id=foo&name=bar", nil)
+				r, err := http.NewRequestWithContext(context.Background(), http.MethodGet, "http://example.com?id=foo&name=bar", nil)
 				if err != nil {
 					return nil, err
 				}
@@ -292,7 +293,7 @@ func Test_Encoding_Bind(t *testing.T) {
 		{
 			"form - MultipartForm",
 			func() (*http.Request, error) {
-				r, err := http.NewRequest(http.MethodPost, "http://example.com", nil)
+				r, err := http.NewRequestWithContext(context.Background(), http.MethodPost, "http://example.com", nil)
 				if err != nil {
 					return nil, err
 				}
@@ -315,7 +316,7 @@ func Test_Encoding_Bind(t *testing.T) {
 		{
 			"json",
 			func() (*http.Request, error) {
-				r, err := http.NewRequest(http.MethodPost, "http://example.com", bytes.NewReader([]byte(`{"id":"foo"}`)))
+				r, err := http.NewRequestWithContext(context.Background(), http.MethodPost, "http://example.com", bytes.NewReader([]byte(`{"id":"foo"}`)))
 				if err != nil {
 					return nil, err
 				}
@@ -350,7 +351,7 @@ func Test_Encoding_Bind(t *testing.T) {
 		{
 			"yaml",
 			func() (*http.Request, error) {
-				r, err := http.NewRequest(http.MethodPost, "http://example.com", bytes.NewReader([]byte("id: foo\nname: bar")))
+				r, err := http.NewRequestWithContext(context.Background(), http.MethodPost, "http://example.com", bytes.NewReader([]byte("id: foo\nname: bar")))
 				if err != nil {
 					return nil, err
 				}
@@ -366,7 +367,7 @@ func Test_Encoding_Bind(t *testing.T) {
 		{
 			"xml",
 			func() (*http.Request, error) {
-				r, err := http.NewRequest(http.MethodPost, "http://example.com", bytes.NewReader([]byte("<TestMode><id>foo</id><name>bar</name></TestMode>")))
+				r, err := http.NewRequestWithContext(context.Background(), http.MethodPost, "http://example.com", bytes.NewReader([]byte("<TestMode><id>foo</id><name>bar</name></TestMode>")))
 				if err != nil {
 					return nil, err
 				}
@@ -457,7 +458,7 @@ func Test_Encoding_BindQuery(t *testing.T) {
 		{
 			"form - no proto",
 			func() (*http.Request, error) {
-				r, err := http.NewRequest(http.MethodGet, "http://example.com?id=foo&name=bar", nil)
+				r, err := http.NewRequestWithContext(context.Background(), http.MethodGet, "http://example.com?id=foo&name=bar", nil)
 				if err != nil {
 					return nil, err
 				}
@@ -472,7 +473,7 @@ func Test_Encoding_BindQuery(t *testing.T) {
 		{
 			"form - proto",
 			func() (*http.Request, error) {
-				r, err := http.NewRequest(http.MethodGet, "http://example.com?id=11&uint32=1234&bool=true", nil)
+				r, err := http.NewRequestWithContext(context.Background(), http.MethodGet, "http://example.com?id=11&uint32=1234&bool=true", nil)
 				if err != nil {
 					return nil, err
 				}
