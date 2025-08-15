@@ -5,6 +5,9 @@ on:
     paths-ignore:
       - "**.md"
 
+permissions:
+  contents: read
+
 jobs:
   golang-ci:
     name: GolangCi-Lint
