@@ -1,6 +1,6 @@
 module github.com/thinkgos/encoding
 
-go 1.22
+go 1.23
 
 require (
 	github.com/go-playground/form/v4 v4.2.2
@@ -11,7 +11,7 @@ require (
 	github.com/ugorji/go/codec v1.3.0
 	golang.org/x/exp v0.0.0-20240525044651-4c93da0ed11d
 	google.golang.org/genproto/googleapis/api v0.0.0-20250102185135-69823020774d
-	google.golang.org/protobuf v1.36.7
+	google.golang.org/protobuf v1.36.8
 	gopkg.in/yaml.v3 v3.0.1
 )
 
