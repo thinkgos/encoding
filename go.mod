@@ -11,7 +11,7 @@ require (
 	github.com/ugorji/go/codec v1.3.1
 	golang.org/x/exp v0.0.0-20240525044651-4c93da0ed11d
 	google.golang.org/genproto/googleapis/api v0.0.0-20250102185135-69823020774d
-	google.golang.org/protobuf v1.36.10
+	google.golang.org/protobuf v1.36.11
 	gopkg.in/yaml.v3 v3.0.1
 )
 
