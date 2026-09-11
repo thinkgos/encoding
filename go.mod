@@ -3,7 +3,7 @@ module github.com/thinkgos/encoding
 go 1.23
 
 require (
-	github.com/go-playground/form/v4 v4.3.0
+	github.com/go-playground/form/v4 v4.3.1
 	github.com/google/go-cmp v0.7.0
 	github.com/pelletier/go-toml/v2 v2.4.3
 	github.com/spf13/cast v1.10.0
